@@ -23,4 +23,5 @@ Kristel Roosimaa <br />
 Mihkel Põder <br />
 Paul Vasemägi
 
-Litsents?
+
+[Litsents](LICENSE.txt)
