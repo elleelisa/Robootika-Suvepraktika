@@ -22,3 +22,6 @@ Joosep Sander Juhanson <br />
 Kristel Roosimaa <br />
 Mihkel Põder <br />
 Paul Vasemägi
+
+
+[Litsents](LICENSE.txt)
