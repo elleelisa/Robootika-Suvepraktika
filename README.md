@@ -17,10 +17,10 @@ summon @Mihkel
 
 ## Autorid
 
-Elle Elisa Ivantšikova
-Joosep Sander Juhanson
-Kristel Roosimaa
-Mihkel Põder
+Elle Elisa Ivantšikova_
+Joosep Sander Juhanson_
+Kristel Roosimaa_
+Mihkel Põder_
 Paul Vasemägi
 
 Litsents?
