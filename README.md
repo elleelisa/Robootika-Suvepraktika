@@ -17,9 +17,9 @@ summon @Mihkel
 
 ### Arduino IDE
 
-Arduino IDE: 1.8.1
-Adafruit AVR Boards: 1.4.9 (https://adafruit.github.io/arduino-board-index/package_adafruit_index.json)
-Arduino AVR Boards: 1.6.19
+Arduino IDE: 1.8.1 <br />
+Adafruit AVR Boards: 1.4.9 (https://adafruit.github.io/arduino-board-index/package_adafruit_index.json)<br />
+Arduino AVR Boards: 1.6.19<br />
 
 ## Autorid
 
