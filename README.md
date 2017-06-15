@@ -13,8 +13,6 @@ Projekt on loodud Tallinna Ülikooli Digitehnoloogia Instituudi Informaatika kur
 
 ## Kasutatud tehnoloogiad ja nende versioonid
 
-summon @Mihkel
-
 ### Arduino IDE
 
 Arduino IDE: 1.8.1 <br />
