@@ -89,9 +89,6 @@
         <br><br>
        </p>
      </div>
-     <div class="w3-third w3-container">
-       <!-- Insert image -->
-     </div>
    </div>
 
    <!--Ohm, volt ja amper-->
@@ -115,13 +112,11 @@
        <figcaption>Pilt 5 - Ohmi seadust illustreeriv pilt.</figcaption>
        </p>
      </div>
-     <div class="w3-third w3-container">
-      <!-- Insert image -->
-     </div>
    </div>
 </div>
 
 <!--Teine leht-->
+<!--Takistid-->
 <div id="secondPage">
   <div class="w3-row w3-padding-64">
      <div class="w3-twothird w3-container">
@@ -144,17 +139,56 @@
        <br><br>
       </p>
     </div>
+  </div>
+
+  <div class="w3-row">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Lülitid</h1>
+      <p>Nüüd, kui baasarusaam on olemas kuidas disainida ja ehitada vooluringi, saame õppida ka selle kontrollimist. Lüliti on oma olemuselt element, mis lubab, suunab mujale või katkestab elektrivoolu. Lüliti loob või katkestab füüsilise ühenduse kahe konduktori vahel. Kõikidele tuttavatest lülititest on näiteks tulede lüliti, hädaohunupp, mis lülitab elektri välja jne.</p>
+      <br><br>
+      <p>Harilik on/off lüliti. O tähendab inglise keeles out ehk väljas ja I tähendab in ehk sees. On ka lüliteid, milles on mõlemad elemendid kokku ühendatud.</p>
+      <br><br>
+      <p>Siin on markeeritud just selline lüliti koos red ring of death’iga, mis oli iga Xboxi kasutaja õudusunenägu.</p>
+      <br><br>
+      <p>Vooluringi skeemil kajastatakse lüliteid vooluringist eemale ulatuva osana. <i>Pildilt siis switch</i></p>
+      <br><br>
+      <p>Lisaks üldistele lülititele on olemas ka loomingulisemad lülitid. Näiteks sildlüliti, mille tööpõhimõte on selles, et jäetakse väike tühimik vooluringi, mille saab ära sillata mingisuguse elektrit juhtiva materjaliga. Näiteks tekitada sildlüliti särgil rinnapeale ning mingisuguse kaelakeega see ühendada ning kaelakee ära liigutades ühenduse katkestades. Selliste lülititega saab minna väga loominguliseks. Samuti on ka olemas näpistuslülitid, mis töötavad täpselt nii nagu need kõlavad.</p>
+      <br><br>
+    </div>
     <div class="w3-third w3-container">
       <!-- Insert image -->
     </div>
   </div>
+
+  <div class="w3-row">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Täiturid</h1>
+      <p>Täiturid on elemendid, mis tavaliselt teevad boom, välguvad või bzzzzzt. Üldiselt on need asjad, mis panevad asjad juhtuma.</p>
+      <br><br>
+      <h3>Ledid</h3>
+      <p>Ledid on üldiselt väga lihtsa ülesehitusega, nad samuti varieeruvad värvi, heleduse ning valgusenurga poolest.  Ledide kontrollimiseks on väga palju võimalusi. Üks lihtsamaid viise LilyPad  ledide kasutamiseks on Arduino.</p>
+      <br><br>
+      <p>Erinevate tulemuste saavutamiseks saab kasutada erinevaid väljundeid.</p>
+      <br><br>
+      <p>Igasse väljundisse saab panna kuni kolm LilyPad ledi seega kokku saab panna kuni 27 ledi. Arduino Simple’ga on see väga kergesti kontrollitav tema üheksa digitaalse väljundiga. Tähtis on vaid kindlaks teha, et vooluallikas suudab piisavat pinget väljutada. Maksimum on kuni 400mA.</p>
+      <br><br>
+      <p>Lõpetuseks, kui on vajadus kontrollida palju LEDe korraga, siis seda saab kasutades multiplexing, Charlieplexing või kasutades selliseid komponente nagu shift register ja PWM laienduskiipe.</p>
+      <br><br>
+      <p>Samuti on olemas ka RGB  LEDe, millel on kolm värvi – punane, roheline ja sinine. Sealt ka nimetus (ingl. K RGB = red, green, blue). Igal värvil on oma jalg, millele voolu andes lülitub LED pirnil see led sisse, samas on ka üldiselt neljas või ka viies jalg, kuhu tuleb ühendada vool või maandus.</p>
+    </div>
+    <div class="w3-third w3-container">
+      <!-- Insert image -->
+    </div>
+  </div>
+
+  <!--lehe divi lõpp-->
 </div>
 
  <!-- Pagination -->
  <div class="w3-center w3-padding-32">
    <div class="w3-bar">
-     <a class="w3-button w3-black" href="#firstPage" onclick="switchPage(1)">1</a>
-     <a class="w3-button w3-hover-black" href="#secondPage" onclick="switchPage(2)">2</a>
+     <a id ="firstPageButton" class="w3-button w3-hover-black" href="#firstPage" onclick="switchPage(1)">1</a>
+     <a id="secondPageButton" class="w3-button w3-hover-black" href="#secondPage" onclick="switchPage(2)">2</a>
    </div>
  </div>
 

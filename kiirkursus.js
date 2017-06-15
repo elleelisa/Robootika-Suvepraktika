@@ -12,3 +12,11 @@ function switchPage(page) {
 }
 
 switchPage(1);
+
+/*function coloredButton(){
+  if (getElementById("firstPage") === true){
+    getElementById("firstPageButton").class = "w3-button w3-black";
+  } else {
+    getElementById("secondPageButton").class = "w3-button w3-black";
+  }
+}*/
