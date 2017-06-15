@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<title>Robootika</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+<body>
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-blue w3-card-2 w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="avaleht.html" class="w3-bar-item w3-button w3-padding-large w3-white">Avaleht</a>
+    <a href="kiirkursus.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Kiirkursus</a>
+    <a href="teeise.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Tee ise!</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="avaleht.html" class="w3-bar-item w3-button w3-padding-large">Avaleht</a>
+    <a href="kiirkursus.html" class="w3-bar-item w3-button w3-padding-large">Kiirkursus</a>
+    <a href="teeise.html" class="w3-bar-item w3-button w3-padding-large">Tee ise!</a>
+  </div>
+</div>
+
+<div class="w3-row w3-padding-64">
+   <div class="w3-threequarter w3-container">
+     <h1 class="w3-text-teal">Disaini oma riie kahe LED tulukesega!</h1>
+     <h2>Sul on vaja:</h2>
+     <ul>
+       <li>2 LED lampi</li>
+       <li>2 hariliku 3V liitium patereid</li>
+     </ul>
+     <br><br>
+
+     <h2>Töö käik:</h2>
+     <p>
+       <figcaption>Alustuseks ühenda LED tulukesed ja patareid omavahel:</figcaption>
+       <img src="pildid/IMG_1258.jpg" alt="materjalid" align="middle" style="width:55%">
+       <br><br>
+       <figcaption>Seejärel teibi need, et ühendus ei katkeks:</figcaption>
+       <img src="pildid/IMG_1260.jpg" alt="materjalid" align="middle" style="width:55%">
+       <br><br>
+       <figcaption>Vali oma riides sobiv koht kuhu tuluke panna ja lõika sinna pisike auk.
+         <br>
+         Seejärel pista meisterdatud led tuluke august läbi:
+       </figcaption>
+       <img src="pildid/IMG_1263.jpg" alt="materjalid" align="middle" style="width:55%">
+       <br><br>
+       <figcaption>Teibi need tagant poolt ilusti kinni, et need tantsides ära ei tuleks!</figcaption>
+       <img src="pildid/IMG_1265.jpg" alt="materjalid" align="middle" style="width:55%">
+       <br><br>
+       <figcaption>Voila! Valmis ta saigi:</figcaption>
+       <img src="pildid/IMG_1267.jpg" alt="materjalid" align="middle" style="width:55%">
+       <br><br>
+
+
+     </p>
+   </div>
+   <div class="w3-quarter w3-container">
+      <figcaption>Vajalikud vahendid: </figcaption>
+      <img src="pildid/IMG_1272.jpg" alt="materjalid" align="middle" style="width:75%">
+   </div>
+  <br><br>
+
+ <br><br>
+
+ </div>
+
+
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">
+ <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>
