@@ -9,14 +9,21 @@ function switchPage(page) {
     document.getElementById("secondPage").style.display = "block";
     break;
   }
+  coloredButton(page);
 }
 
 switchPage(1);
 
-/*function coloredButton(){
-  if (getElementById("firstPage") === true){
-    getElementById("firstPageButton").class = "w3-button w3-black";
-  } else {
-    getElementById("secondPageButton").class = "w3-button w3-black";
+function coloredButton(page){
+  switch (page) {
+    case 1:
+    document.getElementById("firstPageButton").classList.add("w3-black");
+    document.getElementById("secondPageButton").classList.remove("w3-black");
+    break;
+    case 2:
+    document.getElementById("secondPageButton").classList.add("w3-black");
+    document.getElementById("firstPageButton").classList.remove("w3-black");
+    break;
+
   }
-}*/
+}
