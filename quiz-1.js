@@ -6,7 +6,7 @@ if (!$("input[@name=q1]:checked").val() ||
 !$("input[@name=q3]:checked").val() ||
 !$("input[@name=q4]:checked").val()
 ) {
-alert("You're not done yet!");
+alert("Sa ei ole kõikidele küsimustele vastanud!");
 }
 
 else {
@@ -27,22 +27,22 @@ var cat4 = ($("input[@name=q4]:checked").val() != "c");
 
 var cat5 = (!cat1 && !cat2 && !cat3 && !cat4); var categories = [];
 
-if (cat1) { categories.push(cat1name) };
-if (cat2) { categories.push(cat2name) };
-if (cat3) { categories.push(cat3name) };
-if (cat4) { categories.push(cat4name) };
-if (cat5) { categories.push(cat5name) };
+if (cat1) { categories.push(cat1name) ;}
+if (cat2) { categories.push(cat2name) ;}
+if (cat3) { categories.push(cat3name) ;}
+if (cat4) { categories.push(cat4name) ;}
+if (cat5) { categories.push(cat5name) ;}
 
 var catStr = 'Vastasite need küsimused valesti: ' + categories.join(', ') + '';
 $("#categorylist").text(catStr);
 $("#categorylist").show("slow");
 
-if (cat1) { $("#category1").show("slow"); };
-if (cat2) { $("#category2").show("slow"); };
-if (cat3) { $("#category3").show("slow"); };
-if (cat4) { $("#category4").show("slow"); };
-if (cat5) { $("#category5").show("slow"); };
+if (cat1) { $("#category1").show("slow"); }
+if (cat2) { $("#category2").show("slow"); }
+if (cat3) { $("#category3").show("slow"); }
+if (cat4) { $("#category4").show("slow"); }
+if (cat5) { $("#category5").show("slow"); }
 
-{ $("#closing").show("slow"); };
+{ $("#closing").show("slow"); }
 }
     });});
