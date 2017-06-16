@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="quiz-1.js"></script>
 
 <body>
 <!-- Navbar -->
@@ -40,7 +42,7 @@
            <br><br>
            Kas teadsid, et sõna elekter tuleneb vanakreeka sõnast ήλεκτρον (ēlektron) "merevaik"? Nimetus tuleb sellest, et merevaik hõõrdumisel elektriseerub ehk omandab elektrilaengu.
            <br><br>
-           Vooluringi moodustavad omavahel juhtmetega ühendatud vooluallkas, elektritarvitid ja lülitid. Vooluallikas tekitab ja hoiab vooluringi ühendatud juhtides elektrivälja.
+           Vooluringi moodustavad omavahel juhtmetega ühendatud vooluallikas, elektritarvitid ja lülitid. Vooluallikas tekitab ja hoiab vooluringi ühendatud juhtides elektrivälja.
            <br><br>
            Tarvitis muundub osa elektrivälja energiast mingiks teiseks energialiigiks. Näitseks elektrilambis muundub elektrienergia soojuseks ja valguseks.
            <br><br>
@@ -113,6 +115,34 @@
        </p>
      </div>
    </div>
+
+   <h1 class="w3-text-teal">Testi oma teadmisi!</h1>
+
+   <p class="question">1. Mis moodustavad vooluringi?</p>
+   <ul class="answers">
+   <input type="radio" name="q1" value="a" id="q1a"><label for="q1a">A-Vooluallikas, takisti, lüliti</label><br/>
+   <input type="radio" name="q1" value="b" id="q1b"><label for="q1b">B-Elektritarviti, lüliti, hõõglamp</label><br/>
+   <input type="radio" name="q1" value="c" id="q1c"><label for="q1c">C-Vooluallikas, elektritarviti, lüliti</label><br/>
+   <input type="radio" name="q1" value="d" id="q1d"><label for="q1d">D-Elektritarviti, ampermeeter, hõõglamp</label><br/>
+   </ul>
+
+   <p class="question">1. Mida teeb Tarvitis?</p>
+   <ul class="answers">
+   <input type="radio" name="q1" value="a" id="q1a"><label for="q1a">A-Muundub osa elektrivälja energiast mingiks teiseks energialiigiks</label><br/>
+   <input type="radio" name="q1" value="b" id="q1b"><label for="q1b">B-Elektritarviti, lüliti, hõõglamp</label><br/>
+   <input type="radio" name="q1" value="c" id="q1c"><label for="q1c">C-Vooluallikas, elektritarviti, lüliti</label><br/>
+   <input type="radio" name="q1" value="d" id="q1d"><label for="q1d">D-Elektritarviti, ampermeeter, hõõglamp</label><br/>
+   </ul>
+
+
+   <div id="results">
+   Näita vastuseid!
+   </div>
+
+   <div id="category1">
+   <p><strong>Küsimus 1:</strong> Õige vastus on <strong>C</strong>.</p>
+   </div>
+   
 </div>
 
 <!--Teine leht-->
