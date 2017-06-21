@@ -49,48 +49,44 @@
         kuhu nupud ning tuled, et oleks juba alguses võimalik arvestada sellega, kui palju juhtmeid selle jaoks
          vaja läheb. </li>
        <br>
-     <li>Et tulukesed toimiks on sul vaja alla laadida Adafruiti arendusplaatide teek Arduino IDE jaoks:
-      ava File > Preferences, ning Additional Boards Manager URLs alla lisa https://adafruit.github.io/arduino-board-index/package_adafruit_index.json.
-      Siis saad Tools > Board > Boards Manager... alt valida Type: Contributed ning installida Adafruit AVR Boards paketi.</li>
+     <li>Kui jätsid eelmise projekti vahele ja see  on sinu esimene kord Arduinoga, siis ära muretse!
+       Kõik on lihtne. Pead vaid selle arvutiga ühendama, avama Arduino IDE, valima Tools alt õige arendusplaadi ning võid vabalt koodi kirjutama hakata.</li>
       <br>
-      <li>Kui hakkad Arduino IDE-s koodi kirjutama, siis mine igaks juhuks Tools > Board ning vali Arduino Gemma 8MHz.
-          Tools > Programmer alt tuleb valida USBtinyISP. Lisaks pead NeoPixelite kasutamiseks installima
-           NeoPixel teegi: Sketch menüüst vali Include Library > Manage Libraries... ning otsi seal „NeoPixel”. Üles peaks tulema Adafruit NeoPixel by Adafruit – see on õige.</li>
+      <li>Kui valid LED-i, millel on kaks ühenduskohta, siis on sellisel juhul pikem nõel positiivne.
+         Kui valid RGY-LED-i, millel on neli nõela, siis on pikem nõel negatiivne ning teised nõelad vastavad värvidele.</li>
    </p>
-       <figcaption>Võta enda juurde üks Gemma, paar Neopixelit ning elektrit juhtiv niit (võib olla ka mõni muu elektrit juhtiv materjal nagu juhtmed või krokodillid).
-NeoPixelil on kaks noolt, üks positiine pool ning üks negatiivne pool. Noolele, mis suunab Pixeli keskele, on vaja kinni õmmelda ühendus Gemma ühele
-väljundile (selleks sobib hästi D1). Noolele, mis viib Pixelist välja, tuleb õmmelda ühendus teise Pixeli
- sisendile. See viib andmeid edasi ning selle järgi saavad Pixelid teada, missugust värvi ning millal nad seda
-  peavad näitama. Positiivne poolus ühendatakse 3Vo (3V väljund) ning negatiivne GND-i:</figcaption>
-       <img src="img/joonis.jpg" alt="siia_tuleb_joonis" align="middle" style="width:55%">
+       <figcaption>Nupuga on asi juba veidi keerukam. Üks nupp Arduinol kasutab kolme pini: üks 5V, üks ground ning üks digitaalne sisend (digital input).
+          Selle eest võib 5V panna panna kahe nupu vahel kokku. Groundid peavad selle eest aga eraldi olema. </figcaption>
+       <img src="img/arduino.jpg" alt="arduino" align="middle" style="width:55%">
+       <br>
+       <p><li>Nupul tuleb ühendada 5V ja ground ükseise kõrvale, ning digital input tuleb panna kohe groundi vastu.
+          Kui groundil on resistor, siis ei juhtu probleeme sellega, et nupust lahtilaskmisel ei muutu Arduino jaoks tulemus.</li></p>
        <br><br>
-       <h2>Õpime veidi ka koodi tundma:</h2>
-       <p> Koodi poolelt oleks vaja õppida paar käsku NeoPixeli kasutamiseks. Esiteks tuleb koodi algusesse lisada:</p>
-         <li style="color:blue">#include < Adafruit _ NeoPixel . h > (< >- vahel olev tuleb kokku kirjutada)</li>
-        <p> See koodiosa lisab kompilleerimisel lisaks NeoPixeli kontrollimiseks vajalikud funktsioonid. Järgmine tähtsam koodiosa:</p>
-       <li style="color:blue">#define PIN 1</li>
-      <p>  Peale seda on kõige mõttekam juba luua tulukeste jaoks muutuja, mille kaudu saad käskida LED-idel asju teha:</p>
-      <li style="color:blue">Adafruit_NeoPixel strip = Adafruit_NeoPixel(4, PIN, NEO_GRB + NEO_KHZ800);</li>
-    <p>  See koodimuutuja loob uue NeoPixel-tüüpi muutuja. Tüüp ise soovib saada sisendiks tulukeste arvu, mis on üksteise külge ühendatud;
-       pesa, kuhu tulukesed on ühendatud; mis tüüpi tulukesed on ning missuguse sagedusega seda kasutada. Koolil on NeoPixel 2, mis on üles ehitatud
-      GRB-viisil ning mille sagedus ongi 800KHz, seega see koodirida sobib praegusel juhul täiesti perfektselt. </p>
-     <p>Sättimise alafunktsiooni peate lisama ka järgmised read selleks, et valgusriba tööle hakkaks:</p>
-   <li style="color:blue">strip.begin();</li>
-   <li style="color:blue"> strip.show();</li>
-   <p>Nüüd kõige huvitavam osa: tulukeste värvi muutmiseks kasutatakse järgmist käsku:</p>
-   <li style="color:blue">strip.setPixelColor(0, 255, 255, 255);</li>
-   <p>Esimene arv on tulukese arv reas (kui soovid kontrollida neljandat tulukest, siis on arvuks 3)
-    ning järgmised arvud on vastavalt punase, rohelise ning sinise LEDi tugevus.
-    Kui panna kõik arvud maksimumi (255), siis on tulemuseks valge.</p>
-    <p>Peale igat käsku, mis muudab tulukeste värvi, tuleb anda käsk: strip.show(); See käsk uuendab tulukesi ka reaalselt.</p>
-    <p>Värve võid muuta praktiliselt iga loopi ajal, ning samuti võid kasutada suvalisi arve:</p>
-    <li style="color:blue">strip.setPixelColor(2, random(255), random(255), random(255));</li>
-    <p style="color:red">Oluline! Enne, kui hakkad projekti kokku õmblema, mõtle sellele, missuguseid asju need LEDid teha võiksid ning kui keeruline see olla võib.
-    Õmblemisel tuleb kindlasti vaadata, et niit, mis elektrit juhib, ei lähe kokku teiste niitidega, sest see võib tekitada segase olukorra arendamisel või lühise.</p>
-    <p>Siinkohal tuleks selgitada, kuidas töötab meie nupp. Nupu põhimõte siin projektis on see, et nupp on ühendatud ühe piniga, mis on setup funktsioonis üles seatud nii:
-      pinMode(inputPin, INPUT_PULLUP);
-      Kui kokku ühendada inputPin ja ground, siis annab inputPini lugemine väärtuse LOW, kui lahti ühendada, siis on väärtuseks HIGH. Selle järgi saab vastupidiselt mõeldes panna tuled põlema siis, kui väärtus on LOW.</p>
+       <h2>Koodi poole pealt:</h2>
+       <p> Kui avad Arduino IDE esimest korda, siis näed seal kahte funktsiooni, void setup() {} ning void loop() {}. void setup() sisse käivad kõik sellised käsud, mis seadistavad alguses erinevad pinid või seadmed. Seda koodi jooksutatakse ainult üks kord.
+          Teise funktsiooni sisse käib kogu programmikood, mis kordub kuni Arduino väljalülitamiseni.</p>
+        <p> Olenevalt sellest, kuhu soovid ühendada nupu ja LEDi, tuleb setupisse ka see kirjutada. Eeldame lihtsuse huvides,
+           et nupp on kolmandas digital inputis ning LED on viiendas. Kood setupis näeb välja selline:</p>
+       <li style="color:blue">void setup() {
+	pinMode(3, INPUT);
+	pinMode(5, OUTPUT);
+}
+</li>
+      <p> Niimoodi saab Arduino aru, mida temalt nende pinide osas oodatakse. Muidugi saab konstantsed pesad ära vahetada muutujatega, kuid sel juhul peab meelde tuletama, et nende muutujate loomine peab jääma väljapoole igast funktsioonist
+        (ehk siis võid muutujate loomise panna kohe koodi algusesse enne setupi funktsiooni.</p>
 
+    <p>  Input pini väärtust saab lugeda funktsiooniga digitalRead(3);
+       ning LED-i saab põlema panna käsuga digitalWrite(5, HIGH) ning välja lülitada digitalWrite(5, LOW).
+        Tänu C-lähedasele süntaksile saab lihtsa näitena kasutaga juba sellist koodi: </p>
+
+   <li style="color:blue">void loop() {</li>
+   <li style="color:blue"> delay(15); // magab 15 millisekundit.</li>
+   <li style="color:blue"> if (digitalRead(3) == HIGH) {</li>
+   <li style="color:blue"> digitalWrite(5, HIGH);</li>
+   <li style="color:blue"> } else {</li>
+   <li style="color:blue"> digitalWrite(5, LOW);</li>
+   <li style="color:blue">	}</li>
+   <li style="color:blue"> 	}</li>
 
   </div>
 
