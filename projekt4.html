@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<title>Robootika</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+<body>
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-blue w3-card-2 w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="avaleht.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Avaleht</a>
+    <a href="kiirkursus.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Kiirkursus</a>
+    <a href="teeise.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Tee ise!</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="avaleht.html" class="w3-bar-item w3-button w3-padding-large">Avaleht</a>
+    <a href="kiirkursus.html" class="w3-bar-item w3-button w3-padding-large">Kiirkursus</a>
+    <a href="teeise.html" class="w3-bar-item w3-button w3-padding-large">Tee ise!</a>
+  </div>
+</div>
+
+<div class="w3-row w3-padding-64">
+   <div class="w3-threequarter w3-container">
+     <h1 class="w3-text-teal">Suunatuled seljale</h1>
+     <h2>Sul on vaja:</h2>
+     <ul>
+       <li>Arduino Uno </li>
+       <li>Käärid</li>
+       <li>Juhtmeid</li>
+       <li>Nuppe</li>
+       <li>9V patareid</li>
+       <li>Vest või muu soiv riideese</li>
+       <li>Niiti</li>
+       <li>Vabalt valitud LED tuled</li>
+       <li>Arduino IDE tarkvara</li>
+     </ul>
+     <br><br>
+
+     <h2>Töö käik:</h2>
+     <p><li>Projekti alguses võid juba plaanida, kuhu vestile tahad panna Arduino,
+        kuhu nupud ning tuled, et oleks juba alguses võimalik arvestada sellega, kui palju juhtmeid selle jaoks
+         vaja läheb. </li>
+       <br>
+     <li>Et tulukesed toimiks on sul vaja alla laadida Adafruiti arendusplaatide teek Arduino IDE jaoks:
+      ava File > Preferences, ning Additional Boards Manager URLs alla lisa https://adafruit.github.io/arduino-board-index/package_adafruit_index.json.
+      Siis saad Tools > Board > Boards Manager... alt valida Type: Contributed ning installida Adafruit AVR Boards paketi.</li>
+      <br>
+      <li>Kui hakkad Arduino IDE-s koodi kirjutama, siis mine igaks juhuks Tools > Board ning vali Arduino Gemma 8MHz.
+          Tools > Programmer alt tuleb valida USBtinyISP. Lisaks pead NeoPixelite kasutamiseks installima
+           NeoPixel teegi: Sketch menüüst vali Include Library > Manage Libraries... ning otsi seal „NeoPixel”. Üles peaks tulema Adafruit NeoPixel by Adafruit – see on õige.</li>
+   </p>
+       <figcaption>Võta enda juurde üks Gemma, paar Neopixelit ning elektrit juhtiv niit (võib olla ka mõni muu elektrit juhtiv materjal nagu juhtmed või krokodillid).
+NeoPixelil on kaks noolt, üks positiine pool ning üks negatiivne pool. Noolele, mis suunab Pixeli keskele, on vaja kinni õmmelda ühendus Gemma ühele
+väljundile (selleks sobib hästi D1). Noolele, mis viib Pixelist välja, tuleb õmmelda ühendus teise Pixeli
+ sisendile. See viib andmeid edasi ning selle järgi saavad Pixelid teada, missugust värvi ning millal nad seda
+  peavad näitama. Positiivne poolus ühendatakse 3Vo (3V väljund) ning negatiivne GND-i:</figcaption>
+       <img src="img/joonis.jpg" alt="siia_tuleb_joonis" align="middle" style="width:55%">
+       <br><br>
+       <h2>Õpime veidi ka koodi tundma:</h2>
+       <p> Koodi poolelt oleks vaja õppida paar käsku NeoPixeli kasutamiseks. Esiteks tuleb koodi algusesse lisada:</p>
+         <li style="color:blue">#include < Adafruit _ NeoPixel . h > (< >- vahel olev tuleb kokku kirjutada)</li>
+        <p> See koodiosa lisab kompilleerimisel lisaks NeoPixeli kontrollimiseks vajalikud funktsioonid. Järgmine tähtsam koodiosa:</p>
+       <li style="color:blue">#define PIN 1</li>
+      <p>  Peale seda on kõige mõttekam juba luua tulukeste jaoks muutuja, mille kaudu saad käskida LED-idel asju teha:</p>
+      <li style="color:blue">Adafruit_NeoPixel strip = Adafruit_NeoPixel(4, PIN, NEO_GRB + NEO_KHZ800);</li>
+    <p>  See koodimuutuja loob uue NeoPixel-tüüpi muutuja. Tüüp ise soovib saada sisendiks tulukeste arvu, mis on üksteise külge ühendatud;
+       pesa, kuhu tulukesed on ühendatud; mis tüüpi tulukesed on ning missuguse sagedusega seda kasutada. Koolil on NeoPixel 2, mis on üles ehitatud
+      GRB-viisil ning mille sagedus ongi 800KHz, seega see koodirida sobib praegusel juhul täiesti perfektselt. </p>
+     <p>Sättimise alafunktsiooni peate lisama ka järgmised read selleks, et valgusriba tööle hakkaks:</p>
+   <li style="color:blue">strip.begin();</li>
+   <li style="color:blue"> strip.show();</li>
+   <p>Nüüd kõige huvitavam osa: tulukeste värvi muutmiseks kasutatakse järgmist käsku:</p>
+   <li style="color:blue">strip.setPixelColor(0, 255, 255, 255);</li>
+   <p>Esimene arv on tulukese arv reas (kui soovid kontrollida neljandat tulukest, siis on arvuks 3)
+    ning järgmised arvud on vastavalt punase, rohelise ning sinise LEDi tugevus.
+    Kui panna kõik arvud maksimumi (255), siis on tulemuseks valge.</p>
+    <p>Peale igat käsku, mis muudab tulukeste värvi, tuleb anda käsk: strip.show(); See käsk uuendab tulukesi ka reaalselt.</p>
+    <p>Värve võid muuta praktiliselt iga loopi ajal, ning samuti võid kasutada suvalisi arve:</p>
+    <li style="color:blue">strip.setPixelColor(2, random(255), random(255), random(255));</li>
+    <p style="color:red">Oluline! Enne, kui hakkad projekti kokku õmblema, mõtle sellele, missuguseid asju need LEDid teha võiksid ning kui keeruline see olla võib.
+    Õmblemisel tuleb kindlasti vaadata, et niit, mis elektrit juhib, ei lähe kokku teiste niitidega, sest see võib tekitada segase olukorra arendamisel või lühise.</p>
+    <p>Siinkohal tuleks selgitada, kuidas töötab meie nupp. Nupu põhimõte siin projektis on see, et nupp on ühendatud ühe piniga, mis on setup funktsioonis üles seatud nii:
+      pinMode(inputPin, INPUT_PULLUP);
+      Kui kokku ühendada inputPin ja ground, siis annab inputPini lugemine väärtuse LOW, kui lahti ühendada, siis on väärtuseks HIGH. Selle järgi saab vastupidiselt mõeldes panna tuled põlema siis, kui väärtus on LOW.</p>
+
+
+  </div>
+
+  <div class="w3-quarter w3-container">
+    <figcaption>Vajalikud vahendid: </figcaption>
+    <img src="img/materials5.jpg" alt="materjalid" align="middle" style="width:75%">
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">
+ <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>
